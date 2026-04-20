@@ -1,0 +1,19 @@
+services:
+  # Frontend Service
+  - type: web
+    name: portfolio-frontend
+    env: static
+    buildCommand: 'npm run build'
+    staticPublishPath: ./build
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://portfolio-backend.onrender.com/api/*
+      - type: file
+        source: /**
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: REACT_APP_API_URL
+        value: https://portfolio-backend.onrender.com
