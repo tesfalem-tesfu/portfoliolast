@@ -348,8 +348,9 @@ If you encounter any issues or have questions:
 1. Check the troubleshooting section above
 2. Search existing GitHub issues
 3. Create a new issue with detailed information
-4. Contact: [your-email@example.com]
+4. Contact: [tesfutesfalemmarkos@gmail.com]
+5. phone +251922935284
 
 ---
 
-**Built with ❤️ by [Your Name]**
+**Built with ❤️ by [Tesfalem Markos Dola]**
