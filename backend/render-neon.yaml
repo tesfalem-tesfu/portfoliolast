@@ -1,0 +1,34 @@
+services:
+  # Backend Service on Render
+  - type: web
+    name: portfolio-backend
+    env: node
+    buildCommand: 'npm install'
+    startCommand: 'npm start'
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PORT
+        value: 10000
+      # Neon Database Configuration
+      - key: DATABASE_URL
+        sync: false
+      # Security
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+      # Email (optional)
+      - key: EMAIL_HOST
+        value: smtp.gmail.com
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      # CORS for Vercel
+      - key: FRONTEND_URL
+        value: https://your-portfolio.vercel.app
+
+# No database section - using external Neon database
