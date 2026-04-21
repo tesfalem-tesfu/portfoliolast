@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://yourdomain.com'] 
+    ? ['https://portfolio-frontend.onrender.com', 'https://portfoliolast1.onrender.com', 'https://portfoliolastfro.onrender.com'] 
     : ['http://localhost:3000'],
   credentials: true
 }));

@@ -53,7 +53,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend.onrender.com'}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
