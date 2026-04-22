@@ -24,6 +24,8 @@ services:
         generateValue: true
       - key: NODE_ENV
         value: production
+      - key: FRONTEND_URL
+        value: https://portfoliolastfro.onrender.com
       # Email (optional)
       - key: EMAIL_HOST
         value: smtp.gmail.com
