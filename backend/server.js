@@ -12,6 +12,9 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 const chatRoutes = require('./routes/chat');
 
+// Import database connection
+const { connectDB } = require('./config/database-neon');
+
 // Load environment variables
 dotenv.config();
 
@@ -96,12 +99,26 @@ app.use('*', (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`Database: Neon PostgreSQL`);
-  console.log(`Frontend URL: ${process.env.FRONTEND_URL || 'Not configured'}`);
-  console.log(`API: http://localhost:${PORT}/api`);
-});
+const startServer = async () => {
+  try {
+    // Connect to database first
+    await connectDB();
+    console.log('Database connected successfully');
+    
+    // Start the server
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+      console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`Database: Neon PostgreSQL`);
+      console.log(`Frontend URL: ${process.env.FRONTEND_URL || 'Not configured'}`);
+      console.log(`API: http://localhost:${PORT}/api`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
 
 module.exports = app;
