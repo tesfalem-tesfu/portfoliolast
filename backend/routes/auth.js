@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { query } = require('../config/database');
+const { query } = require('../config/database-neon');
 const { validateLogin, validateRegister } = require('../middleware/validation');
 
 const router = express.Router();

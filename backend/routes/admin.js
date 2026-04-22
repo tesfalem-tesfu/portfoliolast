@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs').promises;
-const { query, transaction } = require('../config/database');
+const { query, transaction } = require('../config/database-neon');
 const { auth, adminAuth } = require('../middleware/auth');
 const {
   validateProfile,

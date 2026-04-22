@@ -1,5 +1,5 @@
 const express = require('express');
-const { query } = require('../config/database');
+const { query } = require('../config/database-neon');
 const { GoogleGenAI } = require('@google/genai');
 
 const router = express.Router();

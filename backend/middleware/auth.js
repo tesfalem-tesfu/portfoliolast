@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { query } = require('../config/database');
+const { query } = require('../config/database-neon');
 
 const auth = async (req, res, next) => {
   try {

@@ -1,6 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const { query } = require('../config/database');
+const { query } = require('../config/database-neon');
 const { validateContactMessage } = require('../middleware/validation');
 
 const router = express.Router();
